@@ -36,7 +36,8 @@ package object helisa {
 
   }
 
-  implicit class JSelector[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](sel: Selector[G, FitnessResult]) {
+  implicit class JSelector[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](val sel: Selector[G, FitnessResult])
+      extends AnyVal {
 
     def asJava: j.Selector[G, FitnessResult] = (population, count, opt) => sel(population.asScala, count, opt).asJenetics
 
@@ -51,7 +52,8 @@ package object helisa {
   type Alterer[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]] =
     (Seq[Phenotype[G, FitnessResult]], Long) => AltererResult[G, FitnessResult]
 
-  implicit class JAlterer[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](alt: Alterer[G, FitnessResult]) {
+  implicit class JAlterer[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](val alt: Alterer[G, FitnessResult])
+      extends AnyVal {
 
     def asJava: j.Alterer[G, FitnessResult] = (population, generation) => alt(population.asScala, generation).asJenetics
 
