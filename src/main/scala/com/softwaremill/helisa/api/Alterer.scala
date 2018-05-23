@@ -48,7 +48,7 @@ object Alterer {
       new j.SwapMutator[G, FRC](pMutate)
   }
 
-  object prog {
+  object gp {
 
     def treeMutator[A, G <: TreeGene[A, G], FRC <: Comparable[FRC]](
         fMut: j.ext.util.TreeNode[A] => Unit): j.ext.TreeMutator[A, G, FRC] = (tree: j.ext.util.TreeNode[A]) => fMut(tree)
