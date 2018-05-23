@@ -24,6 +24,8 @@ package object helisa {
   type Selector[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]] =
     (Seq[Phenotype[G, FitnessResult]], Int, Optimize) => collection.immutable.Seq[Phenotype[G, FitnessResult]]
 
+  type Chromosome[A, G <: Gene[_, G]] = j.Chromosome[G]
+
   implicit class GenotypeDecoder[G <: Gene[_, G]](val geno: Genotype[G]) extends AnyVal {
 
     def decode[A](implicit decoder: Decoder[A, G]): Option[A] = decoder.decode(geno)
