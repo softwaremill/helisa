@@ -3,6 +3,7 @@ package com.softwaremill
 import java.lang
 import java.util.function
 
+import com.softwaremill.helisa.api.{Alterer, Chromosome, Selector}
 import com.softwaremill.helisa.api.convert.Decoder
 import io.{jenetics => j}
 
@@ -25,6 +26,12 @@ package object helisa {
     (Seq[Phenotype[G, FitnessResult]], Int, Optimize) => collection.immutable.Seq[Phenotype[G, FitnessResult]]
 
   type Chromosome[A, G <: Gene[_, G]] = j.Chromosome[G]
+
+  val alterers = Alterer
+
+  val selectors = Selector.standard
+
+  val chromosomes = Chromosome
 
   implicit class GenotypeDecoder[G <: Gene[_, G]](val geno: Genotype[G]) extends AnyVal {
 
