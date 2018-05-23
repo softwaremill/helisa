@@ -4,8 +4,6 @@ import java.lang
 import java.util.function
 
 import com.softwaremill.helisa.api.convert.Decoder
-import io.jenetics.util
-import io.jenetics.util.MSeq
 import io.{jenetics => j}
 
 import scala.collection.AbstractSeq
@@ -15,7 +13,9 @@ package object helisa {
 
   type Optimize = j.Optimize
 
-  type Gene[A, G <: Gene[A, G]] = j.Gene[A, G]
+  type Gene[A, G <: Gene[A, G]]                                              = j.Gene[A, G]
+  type NumericGene[A <: Number with Comparable[Any], G <: NumericGene[A, G]] = j.NumericGene[A, G]
+  type TreeGene[A, G <: TreeGene[A, G]]                                      = j.ext.TreeGene[A, G]
 
   type Genotype[G <: Gene[_, G]] = j.Genotype[G]
 
@@ -84,19 +84,19 @@ package object helisa {
 
     def length(): Int = proxied.length
 
-    def map[B](mapper: function.Function[_ >: T, _ <: B]): util.Seq[B] =
+    def map[B](mapper: function.Function[_ >: T, _ <: B]): j.util.Seq[B] =
       proxied
         .map(mapper.asScala)
         .map(_.asInstanceOf[B])
         .asJenetics //TODO: investigate whether this is a Scala/Java inference quirk
 
-    def append(values: lang.Iterable[_ <: T]): util.Seq[T] = (proxied ++ values.asScala).asJenetics
+    def append(values: lang.Iterable[_ <: T]): j.util.Seq[T] = (proxied ++ values.asScala).asJenetics
 
-    def prepend(values: lang.Iterable[_ <: T]): util.Seq[T] = (values.asScala ++ proxied).toSeq.asJenetics
+    def prepend(values: lang.Iterable[_ <: T]): j.util.Seq[T] = (values.asScala ++ proxied).toSeq.asJenetics
 
-    def subSeq(start: Int): util.Seq[T] = proxied.drop(start - 1).asJenetics
+    def subSeq(start: Int): j.util.Seq[T] = proxied.drop(start - 1).asJenetics
 
-    def subSeq(start: Int, end: Int): util.Seq[T] = proxied.slice(start, end).asJenetics
+    def subSeq(start: Int, end: Int): j.util.Seq[T] = proxied.slice(start, end).asJenetics
   }
 
   class SeqJeneticsIView[T](private val proxied: collection.immutable.Seq[T]) extends j.util.ISeq[T] {
@@ -106,21 +106,22 @@ package object helisa {
 
     def length(): Int = proxied.length
 
-    def map[B](mapper: function.Function[_ >: T, _ <: B]): util.ISeq[B] =
+    def map[B](mapper: function.Function[_ >: T, _ <: B]): j.util.ISeq[B] =
       proxied
         .map(mapper.asScala)
         .map(_.asInstanceOf[B])
         .asJenetics //TODO: investigate whether this is a Scala/Java inference quirk
 
-    def append(values: lang.Iterable[_ <: T]): util.ISeq[T] = (proxied ++ values.asScala).asJenetics
+    def append(values: lang.Iterable[_ <: T]): j.util.ISeq[T] = (proxied ++ values.asScala).asJenetics
 
-    def prepend(values: lang.Iterable[_ <: T]): util.ISeq[T] = (values.asScala ++ proxied).to[collection.immutable.Seq].asJenetics
+    def prepend(values: lang.Iterable[_ <: T]): j.util.ISeq[T] =
+      (values.asScala ++ proxied).to[collection.immutable.Seq].asJenetics
 
-    def subSeq(start: Int): util.ISeq[T] = proxied.drop(start - 1).asJenetics
+    def subSeq(start: Int): j.util.ISeq[T] = proxied.drop(start - 1).asJenetics
 
-    def subSeq(start: Int, end: Int): util.ISeq[T] = proxied.slice(start, end).asJenetics
+    def subSeq(start: Int, end: Int): j.util.ISeq[T] = proxied.slice(start, end).asJenetics
 
-    def copy(): MSeq[T] = MSeq.of(proxied: _*)
+    def copy(): j.util.MSeq[T] = j.util.MSeq.of(proxied: _*)
   }
 
   implicit class ScalaJeneticsSeq[T](val sSeq: Seq[T]) extends AnyVal {
