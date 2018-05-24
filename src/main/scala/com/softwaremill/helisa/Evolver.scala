@@ -1,7 +1,12 @@
 package com.softwaremill.helisa
 
+import akka.NotUsed
+import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
+import akka.stream.scaladsl.{Keep, Sink, Source, StreamConverters}
 import com.softwaremill.helisa.api.convert.{CodecBuilder, Decoder}
 import io.{jenetics => j}
+import org.reactivestreams.Publisher
 
 import scala.collection.JavaConverters._
 import scala.concurrent.ExecutionContext
@@ -13,7 +18,6 @@ object Evolver {
       implicit decoder: Decoder[A, G],
       evComp: FitnessResultComparable[FitnessResult]): EvolverBuilder[A, G, evComp.FitnessResultC] = {
 
-    import java.util.function._
     import scala.compat.java8.FunctionConverters._
 
     val codec: j.engine.Codec[A, G] = CodecBuilder.codecFor[A](genotype)
@@ -24,7 +28,26 @@ object Evolver {
 
 class Evolver[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]](val jEngine: j.engine.Engine[G, FRC]) {
 
-  def stream(): Stream[EvolutionResult[A, G, FRC]] = jEngine.stream().iterator().asScala.map(new EvolutionResult(_)).toStream
+  def streamScalaStdlib(): Stream[EvolutionResult[A, G, FRC]] =
+    jEngine.stream().iterator().asScala.map(new EvolutionResult(_)).toStream
+
+  def publisher(): Publisher[EvolutionResult[A, G, FRC]] = {
+    implicit val ec: ExecutionContext  = ExecutionContext.fromExecutor(jEngine.getExecutor)
+    implicit val as: ActorSystem       = ActorSystem(s"helisa_${System.currentTimeMillis()}")
+    implicit val am: ActorMaterializer = ActorMaterializer()
+
+    val (watch, publisher) = source().watchTermination()(Keep.right).toMat(Sink.asPublisher(true))(Keep.both).run()
+
+    watch.onComplete { _ =>
+      am.shutdown()
+      as.terminate()
+    }
+
+    publisher
+  }
+
+  def source(): Source[EvolutionResult[A, G, FRC], NotUsed] =
+    StreamConverters.fromJavaStream(() => jEngine.stream()).map(new EvolutionResult(_))
 
 }
 
