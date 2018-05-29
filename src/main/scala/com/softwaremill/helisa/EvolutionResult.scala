@@ -19,7 +19,7 @@ class EvolutionResult[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]]
 
   def killCount = jResult.getKillCount
 
-  def altererCount = jResult.getAlterCount
+  def operatorCount = jResult.getAlterCount
 
   def invalidCount = jResult.getInvalidCount
 

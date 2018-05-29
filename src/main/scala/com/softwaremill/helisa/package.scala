@@ -3,7 +3,7 @@ package com.softwaremill
 import java.lang
 import java.util.function
 
-import com.softwaremill.helisa.api.{Alterer, Chromosome, Selector}
+import com.softwaremill.helisa.api.{Chromosome, GeneticOperator, Selector}
 import com.softwaremill.helisa.api.convert.Decoder
 import io.{jenetics => j}
 
@@ -25,9 +25,12 @@ package object helisa {
   type Selector[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]] =
     (Seq[Phenotype[G, FitnessResult]], Int, Optimize) => collection.immutable.Seq[Phenotype[G, FitnessResult]]
 
+  type GeneticOperator[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]] =
+    (Seq[Phenotype[G, FitnessResult]], Long) => OperatorResult[G, FitnessResult]
+
   type Chromosome[A, G <: Gene[_, G]] = j.Chromosome[G]
 
-  val alterers = Alterer
+  val operators = GeneticOperator
 
   val selectors = Selector.standard
 
@@ -48,23 +51,21 @@ package object helisa {
   implicit class JSelector[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](val sel: Selector[G, FitnessResult])
       extends AnyVal {
 
-    def asJava: j.Selector[G, FitnessResult] = (population, count, opt) => sel(population.asScala, count, opt).asJenetics
+    def asJenetics: j.Selector[G, FitnessResult] = (population, count, opt) => sel(population.asScala, count, opt).asJenetics
 
   }
 
-  case class AltererResult[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](
+  case class OperatorResult[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](
       population: collection.immutable.Seq[Phenotype[G, FitnessResult]],
       alterations: Int) {
     def asJenetics = j.AltererResult.of(population.asJenetics, alterations)
   }
 
-  type Alterer[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]] =
-    (Seq[Phenotype[G, FitnessResult]], Long) => AltererResult[G, FitnessResult]
-
-  implicit class JAlterer[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](val alt: Alterer[G, FitnessResult])
+  implicit class JGeneticOperator[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](
+      val alt: GeneticOperator[G, FitnessResult])
       extends AnyVal {
 
-    def asJava: j.Alterer[G, FitnessResult] = (population, generation) => alt(population.asScala, generation).asJenetics
+    def asJenetics: j.Alterer[G, FitnessResult] = (population, generation) => alt(population.asScala, generation).asJenetics
 
   }
 

@@ -62,22 +62,22 @@ class EvolverBuilder[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]] 
 
   def fitnessScaler(scaler: FRC => FRC) = modifyBuilder(_.fitnessScaler(scaler.asJava))
 
-  def offspringSelector(selector: Selector[G, FRC]) = modifyBuilder(_.offspringSelector(selector.asJava))
+  def offspringSelector(selector: Selector[G, FRC]) = modifyBuilder(_.offspringSelector(selector.asJenetics))
 
   def offspringSelector(selector: j.Selector[G, FRC]) = modifyBuilder(_.offspringSelector(selector))
 
-  def survivorsSelector(selector: Selector[G, FRC]) = modifyBuilder(_.survivorsSelector(selector.asJava))
+  def survivorsSelector(selector: Selector[G, FRC]) = modifyBuilder(_.survivorsSelector(selector.asJenetics))
 
   def survivorsSelector(selector: j.Selector[G, FRC]) = modifyBuilder(_.survivorsSelector(selector))
 
-  def sSelector(selector: Selector[G, FRC]) = modifyBuilder(_.selector(selector.asJava))
+  def sSelector(selector: Selector[G, FRC]) = modifyBuilder(_.selector(selector.asJenetics))
 
   def selector(selector: j.Selector[G, FRC]) = modifyBuilder(_.selector(selector))
 
-  def alterers(alterer1: Alterer[G, FRC], rest: Alterer[G, FRC]*) =
-    modifyBuilder(_.alterers(alterer1.asJava, rest.map(_.asJava): _*))
+  def geneticOperators(operator1: GeneticOperator[G, FRC], rest: GeneticOperator[G, FRC]*) =
+    modifyBuilder(_.alterers(operator1.asJenetics, rest.map(_.asJenetics): _*))
 
-  def alterers(alterer1: j.Alterer[G, FRC], rest: j.Alterer[G, FRC]*) = modifyBuilder(_.alterers(alterer1, rest: _*))
+  def geneticOperators(operator1: j.Alterer[G, FRC], rest: j.Alterer[G, FRC]*) = modifyBuilder(_.alterers(operator1, rest: _*))
 
   def phenotypeValidator(validator: A => Boolean) =
     modifyBuilder(_.phenotypeValidator(_.getGenotype.decode[A].exists(validator)))
