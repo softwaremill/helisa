@@ -5,9 +5,9 @@ import org.scalacheck.Gen
 import org.scalacheck.ScalacheckShapeless._
 import org.scalatest.OptionValues._
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
-import org.scalatest.{FlatSpec, MustMatchers}
+import org.scalatest.{FlatSpec, Inside, MustMatchers}
 
-class DecoderSpec extends FlatSpec with MustMatchers with GeneratorDrivenPropertyChecks {
+class DecoderSpec extends FlatSpec with MustMatchers with Inside with GeneratorDrivenPropertyChecks {
 
   it must "decode case classes from a compatible, uniform \"flat\" genotype" in {
     val g = Gen.delay(Genotype.uniform(chromosomes.int(0, 5), chromosomes.int(5, 10)))
@@ -16,8 +16,11 @@ class DecoderSpec extends FlatSpec with MustMatchers with GeneratorDrivenPropert
 
     forAll(g)(genotype => {
       val tested = genotype.decode[SimpleIntParams]
-      tested.value.a must be(genotype.get(0).getGene.getAllele)
-      tested.value.b must be(genotype.get(1).getGene.getAllele)
+      inside(tested.value) {
+        case SimpleIntParams(a, b) =>
+          a must be(genotype.get(0).getGene.getAllele)
+          b must be(genotype.get(1).getGene.getAllele)
+      }
     })
 
   }
@@ -29,8 +32,11 @@ class DecoderSpec extends FlatSpec with MustMatchers with GeneratorDrivenPropert
 
     forAll(g)(genotype => {
       val tested = genotype.decode[MixedParams]
-      tested.value.a must be(genotype.get(0).getGene.getAllele)
-      tested.value.b must be(genotype.get(1).getGene.getAllele)
+      inside(tested.value) {
+        case MixedParams(a, b) =>
+          a must be(genotype.get(0).getGene.getAllele)
+          b must be(genotype.get(1).getGene.getAllele)
+      }
     })
   }
 
@@ -41,8 +47,11 @@ class DecoderSpec extends FlatSpec with MustMatchers with GeneratorDrivenPropert
 
     forAll(g)(genotype => {
       val tested = genotype.decode[SimpleIntParams]
-      tested.value.a must be(genotype.get(0).getGene(0).getAllele)
-      tested.value.b must be(genotype.get(0).getGene(1).getAllele)
+      inside(tested.value) {
+        case SimpleIntParams(a, b) =>
+          a must be(genotype.get(0).getGene(0).getAllele)
+          b must be(genotype.get(0).getGene(1).getAllele)
+      }
     })
   }
 
