@@ -7,29 +7,25 @@ import com.softwaremill.helisa._
 
 object Chromosome {
 
-  object standard {
+  def int(min: Int = Int.MinValue, max: Int = Int.MaxValue, length: Int = 1): j.IntegerChromosome =
+    j.IntegerChromosome.of(min, max, length)
 
-    def int(min: Int = Int.MinValue, max: Int = Int.MaxValue, length: Int = 1): j.IntegerChromosome =
-      j.IntegerChromosome.of(min, max, length)
+  def double(min: Double = Double.MinValue, max: Double = Double.MaxValue, length: Int = 1): j.DoubleChromosome =
+    j.DoubleChromosome.of(min, max, length)
 
-    def double(min: Double = Double.MinValue, max: Double = Double.MaxValue, length: Int = 1): j.DoubleChromosome =
-      j.DoubleChromosome.of(min, max, length)
+  def long(min: Long = Long.MinValue, max: Long = Long.MaxValue, length: Int = 1): j.LongChromosome =
+    j.LongChromosome.of(min, max, length)
 
-    def long(min: Long = Long.MinValue, max: Long = Long.MaxValue, length: Int = 1): j.LongChromosome =
-      j.LongChromosome.of(min, max, length)
+  def string(alleles: String, validChars: String): j.CharacterChromosome =
+    j.CharacterChromosome.of(alleles, j.util.CharSeq.of(validChars))
 
-    def string(alleles: String, validChars: String): j.CharacterChromosome =
-      j.CharacterChromosome.of(alleles, j.util.CharSeq.of(validChars))
+  def bigInt(min: BigInt, max: BigInt, length: Int = 1): j.ext.BigIntegerChromosome =
+    j.ext.BigIntegerChromosome.of(min.bigInteger, max.bigInteger, length)
 
-    def bigInt(min: BigInt, max: BigInt, length: Int = 1): j.ext.BigIntegerChromosome =
-      j.ext.BigIntegerChromosome.of(min.bigInteger, max.bigInteger, length)
+  def any[A](gen: () => A, validator: A => Boolean = (_: Any) => true, length: Int = 1): j.AnyChromosome[A] =
+    j.AnyChromosome.of(gen.asJava, validator.asJava, length)
 
-    def any[A](gen: () => A, validator: A => Boolean = (_: Any) => true, length: Int = 1): j.AnyChromosome[A] =
-      j.AnyChromosome.of(gen.asJava, validator.asJava, length)
-
-    def bit(chars: CharSequence, p: Double, length: Int = 1): j.BitChromosome = j.BitChromosome.of(chars, length, p)
-
-  }
+  def bit(chars: CharSequence, p: Double, length: Int = 1): j.BitChromosome = j.BitChromosome.of(chars, length, p)
 
   object gp {
 

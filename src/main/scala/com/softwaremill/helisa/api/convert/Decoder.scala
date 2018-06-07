@@ -1,6 +1,6 @@
 package com.softwaremill.helisa.api.convert
 
-import com.softwaremill.helisa.Gene
+import com.softwaremill.helisa._
 import io.{jenetics => j}
 import shapeless.ops.hlist.ToTraversable
 import shapeless.ops.traversable.FromTraversable
@@ -28,7 +28,7 @@ object Decoder {
                                                                    fT: FromTraversable[Repr]): Decoder[A, G] =
     (genotype: j.Genotype[G]) => {
       import shapeless.syntax.std.traversable._
-      val repr = genotype.iterator().asScala.map(_.getGene.getAllele).toTraversable.toHList[Repr]
+      val repr = genotype.iterator().asScala.flatMap(_.toSeq.asScala.map(_.getAllele)).toTraversable.toHList[Repr]
       repr.map(g.from)
     }
 
