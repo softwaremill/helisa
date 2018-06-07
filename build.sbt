@@ -19,4 +19,8 @@ val coreDeps = Seq("com.chuusai" %% "shapeless" % "2.3.2",
   "com.typesafe.akka" %% "akka-stream" % akkaVersion) ++
   Seq("cats-core", "alleycats-core").map("org.typelevel" %% _ % "1.1.0")
 
-libraryDependencies ++= jeneticsDeps ++ coreDeps
+val testDeps = Seq("org.scalatest" %% "scalatest" % "3.0.5",
+  "org.scalacheck" %% "scalacheck" % "1.14.0",
+  "com.github.alexarchambault" %% "scalacheck-shapeless_1.13" % "1.1.6").map(_ % "test")
+
+libraryDependencies ++= jeneticsDeps ++ coreDeps ++ testDeps
