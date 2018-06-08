@@ -70,7 +70,7 @@ class EvolverBuilder[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]] 
 
   def survivorsSelector(selector: j.Selector[G, FRC]) = modifyBuilder(_.survivorsSelector(selector))
 
-  def sSelector(selector: Selector[G, FRC]) = modifyBuilder(_.selector(selector.asJenetics))
+  def selector(selector: Selector[G, FRC]) = modifyBuilder(_.selector(selector.asJenetics))
 
   def selector(selector: j.Selector[G, FRC]) = modifyBuilder(_.selector(selector))
 
