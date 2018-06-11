@@ -15,6 +15,7 @@ object GeneticOperator {
     def intermediate[G <: NumericGene[_, G], FRC <: Comparable[FRC]](pRecombine: Double = defaultOperatorProbability,
                                                                      cLoc: Int = 0) =
       new j.IntermediateCrossover[G, FRC](pRecombine, cLoc)
+
     def line[G <: NumericGene[_, G], FRC <: Comparable[FRC]](pRecombine: Double = defaultOperatorProbability, cLoc: Int = 0) =
       new j.LineCrossover[G, FRC](pRecombine, cLoc)
 
@@ -23,6 +24,7 @@ object GeneticOperator {
 
     def partiallyMatched[G <: NumericGene[_, G], FRC <: Comparable[FRC]](pRecombine: Double) =
       new j.PartiallyMatchedCrossover[G, FRC](pRecombine)
+
     def singlePoint[G <: Gene[_, G], FRC <: Comparable[FRC]](pRecombine: Double = 0.05) =
       new j.SinglePointCrossover[G, FRC](pRecombine)
 

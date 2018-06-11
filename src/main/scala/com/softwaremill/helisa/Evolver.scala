@@ -52,35 +52,38 @@ class Evolver[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]](val jEn
 }
 
 class EvolverBuilder[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]] private[helisa] (
-    private val jBuilder: j.engine.Engine.Builder[G, FRC]) {
+    private[helisa] val jBuilder: j.engine.Engine.Builder[G, FRC]) {
   import scala.compat.java8.FunctionConverters._
 
-  private def modifyBuilder(mod: j.engine.Engine.Builder[G, FRC] => Unit): EvolverBuilder[A, G, FRC] = {
-    mod(jBuilder)
-    this
-  }
+  def phenotypeValidator(validator: A => Boolean) =
+    modifyBuilder(_.phenotypeValidator(_.getGenotype.decode[A].exists(validator)))
 
-  def fitnessScaler(scaler: FRC => FRC) = modifyBuilder(_.fitnessScaler(scaler.asJava))
-
-  def offspringSelector(selector: Selector[G, FRC]) = modifyBuilder(_.offspringSelector(selector.asJenetics))
-
-  def offspringSelector(selector: j.Selector[G, FRC]) = modifyBuilder(_.offspringSelector(selector))
-
-  def survivorsSelector(selector: Selector[G, FRC]) = modifyBuilder(_.survivorsSelector(selector.asJenetics))
-
-  def survivorsSelector(selector: j.Selector[G, FRC]) = modifyBuilder(_.survivorsSelector(selector))
-
-  def selector(selector: Selector[G, FRC]) = modifyBuilder(_.selector(selector.asJenetics))
-
-  def selector(selector: j.Selector[G, FRC]) = modifyBuilder(_.selector(selector))
-
-  def geneticOperators(operator1: GeneticOperator[G, FRC], rest: GeneticOperator[G, FRC]*) =
+  def geneticOperatorsAsFunctions(operator1: GeneticOperator[G, FRC], rest: GeneticOperator[G, FRC]*) =
+    //Different name for type inference to work correctly
     modifyBuilder(_.alterers(operator1.asJenetics, rest.map(_.asJenetics): _*))
 
   def geneticOperators(operator1: j.Alterer[G, FRC], rest: j.Alterer[G, FRC]*) = modifyBuilder(_.alterers(operator1, rest: _*))
 
-  def phenotypeValidator(validator: A => Boolean) =
-    modifyBuilder(_.phenotypeValidator(_.getGenotype.decode[A].exists(validator)))
+  def populationSize(size: Int) = modifyBuilder(_.populationSize(size))
+
+  def offspringPopulationSize(size: Int) = modifyBuilder(_.offspringSize(size))
+
+  def executor(ec: ExecutionContext) = modifyBuilder(_.executor(ec.execute(_)))
+  def maximalPhenotypeAge(age: Long) = modifyBuilder(_.maximalPhenotypeAge(age))
+
+  def selectorAsFunction(selector: Selector[G, FRC]) = modifyBuilder(_.selector(selector.asJenetics))
+
+  def selector(selector: j.Selector[G, FRC]) = modifyBuilder(_.selector(selector))
+
+  def offspringSelectorAsFunction(selector: Selector[G, FRC]) = modifyBuilder(_.offspringSelector(selector.asJenetics))
+
+  def offspringSelector(selector: j.Selector[G, FRC]) = modifyBuilder(_.offspringSelector(selector))
+
+  def survivorsSelectorAsFunction(selector: Selector[G, FRC]) = modifyBuilder(_.survivorsSelector(selector.asJenetics))
+
+  def survivorsSelector(selector: j.Selector[G, FRC]) = modifyBuilder(_.survivorsSelector(selector))
+
+  def fitnessScaler(scaler: FRC => FRC) = modifyBuilder(_.fitnessScaler(scaler.asJava))
 
   def genotypeValidator(validator: Genotype[G] => Boolean) = modifyBuilder(_.genotypeValidator(validator.asJava))
 
@@ -96,18 +99,15 @@ class EvolverBuilder[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]] 
 
   def survivorsSize(size: Int) = modifyBuilder(_.survivorsSize(size))
 
-  def offspringSize(size: Int) = modifyBuilder(_.offspringSize(size))
-
-  def populationSize(size: Int) = modifyBuilder(_.populationSize(size))
-
-  def maximalPhenotypeAge(age: Long) = modifyBuilder(_.maximalPhenotypeAge(age))
-
-  def executor(ec: ExecutionContext) = modifyBuilder(_.executor(ec.execute(_)))
-
   def clock(clock: java.time.Clock) = modifyBuilder(_.clock(clock))
 
   def individualCreationRetries(retries: Int) = modifyBuilder(_.individualCreationRetries(retries))
 
   def build(): Evolver[A, G, FRC] = new Evolver(jBuilder.build())
+
+  private def modifyBuilder(mod: j.engine.Engine.Builder[G, FRC] => Unit): EvolverBuilder[A, G, FRC] = {
+    mod(jBuilder)
+    this
+  }
 
 }

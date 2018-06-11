@@ -14,6 +14,11 @@ package object helisa {
 
   type Optimize = j.Optimize
 
+  object Optimize {
+    val Maximum = j.Optimize.MAXIMUM
+    val Minimum = j.Optimize.MINIMUM
+  }
+
   type Gene[A, G <: Gene[A, G]]                                              = j.Gene[A, G]
   type NumericGene[A <: Number with Comparable[Any], G <: NumericGene[A, G]] = j.NumericGene[A, G]
   type TreeGene[A, G <: TreeGene[A, G]]                                      = j.ext.TreeGene[A, G]
@@ -35,6 +40,8 @@ package object helisa {
   val selectors = Selector.standard
 
   val chromosomes = Chromosome
+
+  val genotypes = Genotype
 
   implicit class GenotypeDecoder[G <: Gene[_, G]](val geno: Genotype[G]) extends AnyVal {
 

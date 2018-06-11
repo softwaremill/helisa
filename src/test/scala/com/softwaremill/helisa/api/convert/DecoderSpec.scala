@@ -10,7 +10,7 @@ import org.scalatest.{FlatSpec, Inside, MustMatchers}
 class DecoderSpec extends FlatSpec with MustMatchers with Inside with GeneratorDrivenPropertyChecks {
 
   it must "decode case classes from a compatible, uniform \"flat\" genotype" in {
-    val g = Gen.delay(Genotype.uniform(chromosomes.int(0, 5), chromosomes.int(5, 10)))
+    val g = Gen.delay(genotypes.uniform(chromosomes.int(0, 5), chromosomes.int(5, 10)))
 
     case class SimpleIntParams(a: Int, b: Int)
 
@@ -26,7 +26,7 @@ class DecoderSpec extends FlatSpec with MustMatchers with Inside with GeneratorD
   }
 
   it must "decode case classes from a compatible, non-uniform \"flat\" genotype" in {
-    val g = Gen.delay(Genotype.generic(chromosomes.int(0, 5), chromosomes.double(-0.5, 0.5)))
+    val g = Gen.delay(genotypes.generic(chromosomes.int(0, 5), chromosomes.double(-0.5, 0.5)))
 
     case class MixedParams(a: Int, b: Double)
 
@@ -41,7 +41,7 @@ class DecoderSpec extends FlatSpec with MustMatchers with Inside with GeneratorD
   }
 
   it must "decode case classes from a compatible, uniform \"non-flat\" genotype" in {
-    val g = Gen.delay(Genotype.uniform(chromosomes.int(0, 5, 2)))
+    val g = Gen.delay(genotypes.uniform(chromosomes.int(0, 5, 2)))
 
     case class SimpleIntParams(a: Int, b: Int)
 
@@ -56,7 +56,7 @@ class DecoderSpec extends FlatSpec with MustMatchers with Inside with GeneratorD
   }
 
   it must "NOT decode case classes from a non-compatible genotype (arity)" in {
-    val g = Gen.delay(Genotype.uniform(chromosomes.int(0, 5), chromosomes.int(5, 10)))
+    val g = Gen.delay(genotypes.uniform(chromosomes.int(0, 5), chromosomes.int(5, 10)))
 
     case class SimpleIntParams(a: Int)
 
@@ -66,7 +66,7 @@ class DecoderSpec extends FlatSpec with MustMatchers with Inside with GeneratorD
   }
 
   it must "NOT decode case classes from a non-compatible genotype (types)" in {
-    val g = Gen.delay(Genotype.uniform(chromosomes.int(0, 5), chromosomes.int(5, 10)))
+    val g = Gen.delay(genotypes.uniform(chromosomes.int(0, 5), chromosomes.int(5, 10)))
 
     case class SimpleIntParams(a: Double, b: Double)
 
