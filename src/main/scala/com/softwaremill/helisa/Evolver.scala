@@ -1,15 +1,16 @@
 package com.softwaremill.helisa
 
 import akka.NotUsed
-import akka.actor.ActorSystem
-import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.{Keep, Sink, Source, StreamConverters}
+import cats.effect.Async
 import com.softwaremill.helisa.api.convert.{CodecBuilder, Decoder}
 import io.{jenetics => j}
 import org.reactivestreams.Publisher
+import fs2.{Stream => Fs2Stream}
 
 import scala.collection.JavaConverters._
 import scala.concurrent.ExecutionContext
+import scala.language.higherKinds
 
 object Evolver {
 
@@ -28,10 +29,24 @@ object Evolver {
 
 class Evolver[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]](val jEngine: j.engine.Engine[G, FRC]) {
 
-  def streamScalaStdlib(): Stream[EvolutionResult[A, G, FRC]] =
-    jEngine.stream().iterator().asScala.map(new EvolutionResult(_)).toStream
+  def iterator(): Iterator[EvolutionResult[A, G, FRC]] =
+    jEngine.stream().iterator().asScala.map(new EvolutionResult(_))
+
+  def streamScalaStdLib(): Stream[EvolutionResult[A, G, FRC]] =
+    iterator().toStream
+
+  def source(): Source[EvolutionResult[A, G, FRC], NotUsed] =
+    StreamConverters.fromJavaStream(() => jEngine.stream()).map(new EvolutionResult(_))
+
+  val akkaStreamSource: Source[EvolutionResult[A, G, FRC], NotUsed] = source
+
+  def fs2[F[_]: Async](): Fs2Stream[F, EvolutionResult[A, G, FRC]] =
+    Fs2Stream.fromIterator(iterator())
 
   def publisher(): Publisher[EvolutionResult[A, G, FRC]] = {
+    import akka.actor.ActorSystem
+    import akka.stream.ActorMaterializer
+
     implicit val ec: ExecutionContext  = ExecutionContext.fromExecutor(jEngine.getExecutor)
     implicit val as: ActorSystem       = ActorSystem(s"helisa_${System.currentTimeMillis()}")
     implicit val am: ActorMaterializer = ActorMaterializer()
@@ -45,9 +60,6 @@ class Evolver[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]](val jEn
 
     publisher
   }
-
-  def source(): Source[EvolutionResult[A, G, FRC], NotUsed] =
-    StreamConverters.fromJavaStream(() => jEngine.stream()).map(new EvolutionResult(_))
 
 }
 

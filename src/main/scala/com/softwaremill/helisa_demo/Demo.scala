@@ -15,7 +15,7 @@ object Demo extends App {
       .phenotypeValidator(canny => canny.low <= canny.high)
       .build()
 
-  val stream = evolver.streamScalaStdlib()
+  val stream = evolver.streamScalaStdLib()
 
   val best = stream.drop(1000).head.bestPhenotype
 
