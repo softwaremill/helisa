@@ -1,7 +1,6 @@
 package com.softwaremill.helisa_demo
 
 import com.softwaremill.helisa._
-import io.jenetics.{Genotype, IntegerChromosome}
 
 object Demo extends App {
 
@@ -9,8 +8,7 @@ object Demo extends App {
     ((cannyParams.low + cannyParams.high + cannyParams.actualBlur) % 8.0) + 1.0
 
   val evolver =
-    Evolver(fitnessFunction,
-            () => Genotype.of(IntegerChromosome.of(0, 255), IntegerChromosome.of(0, 255), IntegerChromosome.of(0, 6)))
+    Evolver(fitnessFunction, () => genotypes.uniform(chromosomes.int(0, 255), chromosomes.int(0, 255), chromosomes.int(0, 6)))
       .populationSize(100)
       .phenotypeValidator(canny => canny.low <= canny.high)
       .build()
