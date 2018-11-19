@@ -4,7 +4,7 @@ version := "0.1"
 scalaVersion := "2.12.6"
 
 
-addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.6")
+addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.8")
 
 scalacOptions += "-Ypartial-unification"
 
@@ -27,3 +27,13 @@ val testDeps = Seq("org.scalatest" %% "scalatest" % "3.0.5",
   "com.github.alexarchambault" %% "scalacheck-shapeless_1.13" % "1.1.6").map(_ % "test")
 
 libraryDependencies ++= jeneticsDeps ++ coreDeps ++ apiDeps ++ testDeps
+
+
+//ScalaDoc
+enablePlugins(SiteScaladocPlugin, GhpagesPlugin)
+
+siteSubdirName in SiteScaladoc := "latest/api"
+scalacOptions in (Compile,doc) ++= Seq("-groups") ++ Opts.doc.title("Helisa")
+
+scmInfo := Some(ScmInfo(url("https://github.com/softwaremill/helisa"), "https://github.com/softwaremill/helisa.git"))
+git.remoteRepo := scmInfo.value.get.connection

@@ -4,13 +4,17 @@ import com.softwaremill.helisa._
 
 object Demo extends App {
 
-  val fitnessFunction = (cannyParams: CannyParameters) =>
-    ((cannyParams.low + cannyParams.high + cannyParams.actualBlur) % 8.0) + 1.0
+  val Number = 42
+
+  val genotype =
+    () => genotypes.uniform(chromosomes.int(0, 100))
+  def fitness(toGuess: Int) =
+    (guess: Guess) => 1.0 / (guess.num - toGuess).abs
 
   val evolver =
-    Evolver(fitnessFunction, () => genotypes.uniform(chromosomes.int(0, 255), chromosomes.int(0, 255), chromosomes.int(0, 6)))
+    Evolver(fitness(Number), genotype)
       .populationSize(100)
-      .phenotypeValidator(canny => canny.low <= canny.high)
+      .phenotypeValidator(_.num % 2 == 0)
       .build()
 
   val stream = evolver.streamScalaStdLib()
@@ -21,8 +25,4 @@ object Demo extends App {
 
 }
 
-case class CannyParameters(low: Int, high: Int, rawBlur: Int) {
-
-  def actualBlur = rawBlur * 2 - 1
-
-}
+case class Guess(num: Int)

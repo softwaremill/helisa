@@ -2,6 +2,7 @@ package com.softwaremill.helisa
 
 import com.softwaremill.helisa.api.convert.Decoder
 import io.{jenetics => j}
+import com.softwaremill.helisa.api.InternalImplicits._
 
 class EvolutionResult[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]](val jResult: j.engine.EvolutionResult[G, FRC]) {
 

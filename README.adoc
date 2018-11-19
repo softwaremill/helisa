@@ -1,0 +1,146 @@
+= Helisa
+:apiUrl: https://softwaremill.github.io/helisa/latest/api/com/softwaremill/helisa/
+
+== What is it?
+
+Helisa (HEL-EE-SAH) is a Scala frontend for solving problems with genetic algorithms and genetic programming.
+This project is using `jenetics` as the backendfootnote:[there is also a version with a JGAP backend].
+
+== How to use it
+
+=== Basic usage
+
+The two things that are absolutely required are:
+
+. A *genotype*, i.e. a representation of possible solutions to the problem,
+. a *fitness function*, that scores the solutions generated from the genotypes.
+
+
+Using an example for guessing a number between 0 and a 100, you would have:
+
+[source,scala]
+----
+import com.softwaremill.helisa._
+
+case class Guess(num: Int) <1>
+
+val genotype =
+  () => genotypes.uniform(chromosomes.int(0, 100)) <2>
+def fitness(toGuess: Int) =
+  (guess: Guess) => 1.0 / (guess.num - toGuess).abs <3>
+----
+<1> The representation of a solution to the problem (the *phenotype*)
+<2> A producer of genotypes.
+<3> The fitness function - the closer to the target number, the higher the fitness score.
+
+
+We use the code above to set up the `Evolver`, which encapsulates all configuration and generates
+fresh population streams:
+
+
+[source,scala]
+----
+val evolver =
+  Evolver(fitness(Number), genotype) <1>
+    .populationSize(100) <2>
+    .build()
+
+val stream = evolver.streamScalaStdLib() <3>
+
+val best = stream.drop(1000).head.bestPhenotype <4>
+
+println(best)
+// Some(Guess(42))
+----
+<1> Initialize the `Evolver` with our genotype and fitness function.
+<2> Set the population size.
+<3> Obtain a `Stream` population stream (see <<Integrating>> for more information)
+<4> Advance the stream and obtain the highest-scored phenotype.
+
+=== Validation
+
+You can additionally restrict the solution space by adding a phenotype validator:
+
+[source,scala]
+----
+val evolver =
+  Evolver(fitness(Number), genotype)
+    .populationSize(100)
+    .phenotypeValidator(_.num % 2 == 0) <1>
+    .build()
+----
+<1> We know the number is even, so we're restricting possible solutions to only those numbers.
+
+=== Operators
+
+As a reminder, the three main elements of evolution in genetic algorithms are:
+
+ - the *selection* of fittest individuals (phenotypes),
+ - the *recombination* of selected individuals to form new individuals in the next generation of the population,
+ - the *mutation* of the new/remaining individuals.
+
+==== Selection
+
+Standard *selectors* are available from {apiUrl}api/Selector$$standard$.html[`helisa.selectors`], you use them like this:
+
+[source,scala]
+----
+import com.softwaremill.helisa._
+
+val evolver =
+  Evolver(fitnessFunction, genotype)
+   .offspringSelector(selectors.x) <1>
+   .survivorsSelector(selectors.y) <2>
+    .build()
+----
+<1> Affect just the survivors.
+<2> Affects both the survivors and offspring.
+
+You can also add a custom selector by passing the appropriate function to the
+ {apiUrl}EvolverBuilder.html#survivorSelectorAsFunction(selector:com.softwaremill.helisa.Selector++[++G,FRC++]++):com.softwaremill.helisa.EvolverBuilder++[++A,G,FRC++]++[survivorSelectorAsFunction] or
+ {apiUrl}EvolverBuilder.html#offspringSelectorAsFunction(selector:com.softwaremill.helisa.Selector++[++G,FRC++]++):com.softwaremill.helisa.EvolverBuilder++[++A,G,FRC++]++[offspringSelectorAsFunction]
+ method.
+
+==== Recombination and mutation
+
+Recombination and mutation is handled are both generalized to *operators*, available in {apiUrl}api/GeneticOperator$.html[`helisa.operators`] .
+You use them as follows:
+
+[source,scala]
+----
+import com.softwaremill.helisa._
+
+val evolver =
+  Evolver(fitnessFunction, genotype)
+   .geneticOperators(operators.crossover.x, <1>
+   operators.mutation.y) <2>
+    .build()
+----
+<1> Recombination operators.
+<2> Mutation operators.
+
+You can also add a custom operator by passing the appropriate function to the {apiUrl}EvolverBuilder.html#geneticOperatorsAsFunctions(operator1:com.softwaremill.helisa.GeneticOperator++[++G,FRC++]++,rest:com.softwaremill.helisa.GeneticOperator++[++G,FRC++]++*):com.softwaremill.helisa.EvolverBuilder++[++A,G,FRC++]++[geneticOperatorsAsFunctions] method.
+
+=== Other configuration
+
+See the doc of {apiUrl}EvolverBuilder.html[`EvolverBuilder`] for all `Evolver` configuration options.
+
+
+=== Integrating
+
+Integrations for:
+
+- `scala.collection.Iterator`
+- `scala.collection.Stream`
+- Akka Stream `Source`
+- FS2 `Stream` for any `Async`
+- Reactive Streams `Publisher`
+
+In addition:
+
+- Monix is not supported directly, but can be taken advantage with using the other integrations,
+- Spark integration is coming up.
+
+=== Genetic programming
+
+TBD
