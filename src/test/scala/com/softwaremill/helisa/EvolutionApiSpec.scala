@@ -1,5 +1,6 @@
 package com.softwaremill.helisa
 
+import com.softwaremill.helisa.api.EvolutionResult
 import io.jenetics.IntegerChromosome
 import org.reactivestreams.{Subscriber, Subscription}
 import org.scalatest.OptionValues._

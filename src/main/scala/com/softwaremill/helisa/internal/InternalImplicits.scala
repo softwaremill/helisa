@@ -1,12 +1,14 @@
-package com.softwaremill.helisa.api
+package com.softwaremill.helisa.internal
 import java.lang
 import java.util.function
+
+import com.softwaremill.helisa.{Gene, GeneticOperator, Selector}
 import io.{jenetics => j}
 
-import scala.collection.AbstractSeq
 import scala.collection.JavaConverters._
+import scala.collection.AbstractSeq
 
-object InternalImplicits {
+private[helisa] object InternalImplicits {
 
   class JeneticsSeqView[T](private val proxied: j.util.Seq[T]) extends AbstractSeq[T] {
     def length: Int = proxied.length()
@@ -92,6 +94,21 @@ object InternalImplicits {
   implicit class JeneticsIToScalaISeq[T](val jSeq: j.util.ISeq[T]) extends AnyVal {
 
     def asScala: collection.immutable.Seq[T] = new JeneticsISeqView[T](jSeq)
+
+  }
+
+  implicit class JSelector[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](val sel: Selector[G, FitnessResult])
+      extends AnyVal {
+
+    def asJenetics: j.Selector[G, FitnessResult] = (population, count, opt) => sel(population.asScala, count, opt).asJenetics
+
+  }
+
+  implicit class JGeneticOperator[G <: Gene[_, G], FitnessResult <: Comparable[FitnessResult]](
+      val alt: GeneticOperator[G, FitnessResult])
+      extends AnyVal {
+
+    def asJenetics: j.Alterer[G, FitnessResult] = (population, generation) => alt(population.asScala, generation).asJenetics
 
   }
 

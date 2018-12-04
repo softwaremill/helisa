@@ -6,7 +6,7 @@ scalaVersion := "2.12.6"
 
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.8")
 
-scalacOptions += "-Ypartial-unification"
+scalacOptions ++= Seq("-feature", "-Ypartial-unification")
 
 val jeneticsDeps = Seq(
   "jenetics",

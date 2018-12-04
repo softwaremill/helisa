@@ -1,10 +1,16 @@
-package com.softwaremill.helisa
+package com.softwaremill.helisa.api
 
+import com.softwaremill.helisa._
 import com.softwaremill.helisa.api.convert.Decoder
+import com.softwaremill.helisa.internal.InternalImplicits._
 import io.{jenetics => j}
-import com.softwaremill.helisa.api.InternalImplicits._
 
-class EvolutionResult[A: Decoder[?, G], G <: Gene[_, G], FRC <: Comparable[FRC]](val jResult: j.engine.EvolutionResult[G, FRC]) {
+/**
+  * Result of the current evolutionary iteration, provided by an iterator/stream created from an
+  * [[Evolver]]
+  */
+class EvolutionResult[A: Decoder[?, G], G <: Gene[_, G], Fitness <: Comparable[Fitness]](
+    private val jResult: j.engine.EvolutionResult[G, Fitness]) {
 
   def optimize = jResult.getOptimize
 

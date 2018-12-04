@@ -1,13 +1,13 @@
-package com.softwaremill.helisa
+package com.softwaremill.helisa.api
 
 import scala.annotation.implicitNotFound
 
 @implicitNotFound("""Comparable to {FitnessResult} not found. The result of your fitness function should either:
 1. Be a primitive (Int/Long/Double/Float).
 2. Implement java.lang.Comparable.""")
-trait FitnessResultComparable[FitnessResult] {
+trait FitnessResultComparable[Fitness] {
   type FitnessResultC <: Comparable[FitnessResultC]
-  def apply(c: FitnessResult): FitnessResultC
+  def apply(c: Fitness): FitnessResultC
 }
 
 object FitnessResultComparable {

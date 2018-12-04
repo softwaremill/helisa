@@ -4,7 +4,7 @@ import io.{jenetics => j}
 
 import scala.compat.java8.FunctionConverters._
 import com.softwaremill.helisa._
-import InternalImplicits._
+import com.softwaremill.helisa.internal.InternalImplicits._
 
 object Chromosome {
 

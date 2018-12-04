@@ -6,6 +6,7 @@ import org.scalacheck.ScalacheckShapeless._
 import org.scalatest.OptionValues._
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
 import org.scalatest.{FlatSpec, Inside, MustMatchers}
+import language.existentials
 
 class DecoderSpec extends FlatSpec with MustMatchers with Inside with GeneratorDrivenPropertyChecks {
 

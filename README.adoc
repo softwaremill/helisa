@@ -97,8 +97,8 @@ val evolver =
 <2> Affects both the survivors and offspring.
 
 You can also add a custom selector by passing the appropriate function to the
- {apiUrl}EvolverBuilder.html#survivorSelectorAsFunction(selector:com.softwaremill.helisa.Selector++[++G,FRC++]++):com.softwaremill.helisa.EvolverBuilder++[++A,G,FRC++]++[survivorSelectorAsFunction] or
- {apiUrl}EvolverBuilder.html#offspringSelectorAsFunction(selector:com.softwaremill.helisa.Selector++[++G,FRC++]++):com.softwaremill.helisa.EvolverBuilder++[++A,G,FRC++]++[offspringSelectorAsFunction]
+ {apiUrl}EvolverBuilder.html#survivorSelectorAsFunction(selector:com.softwaremill.helisa.Selector++[++G,Fitness++]++):com.softwaremill.helisa.EvolverBuilder++[++A,G,Fitness++]++[survivorSelectorAsFunction] or
+ {apiUrl}EvolverBuilder.html#offspringSelectorAsFunction(selector:com.softwaremill.helisa.Selector++[++G,Fitness++]++):com.softwaremill.helisa.EvolverBuilder++[++A,G,Fitness++]++[offspringSelectorAsFunction]
  method.
 
 ==== Recombination and mutation
@@ -119,7 +119,7 @@ val evolver =
 <1> Recombination operators.
 <2> Mutation operators.
 
-You can also add a custom operator by passing the appropriate function to the {apiUrl}EvolverBuilder.html#geneticOperatorsAsFunctions(operator1:com.softwaremill.helisa.GeneticOperator++[++G,FRC++]++,rest:com.softwaremill.helisa.GeneticOperator++[++G,FRC++]++*):com.softwaremill.helisa.EvolverBuilder++[++A,G,FRC++]++[geneticOperatorsAsFunctions] method.
+You can also add a custom operator by passing the appropriate function to the {apiUrl}EvolverBuilder.html#geneticOperatorsAsFunctions(operator1:com.softwaremill.helisa.GeneticOperator++[++G,Fitness++]++,rest:com.softwaremill.helisa.GeneticOperator++[++G,Fitness++]++*):com.softwaremill.helisa.EvolverBuilder++[++A,G,Fitness++]++[geneticOperatorsAsFunctions] method.
 
 === Other configuration
 
