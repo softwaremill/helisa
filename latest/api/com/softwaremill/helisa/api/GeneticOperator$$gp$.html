@@ -113,10 +113,12 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../index.html"><span class="name">helisa</span></a>
+        <a title="Collection of necessary types and values needed to construct an evolutionary algorithm run with an com.softwaremill.helisa.Evolver." href="../index.html"><span class="name">helisa</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.softwaremill">softwaremill</a></dd></dl></div>
+      <p class="shortcomment cmt">Collection of necessary types and values needed to construct an evolutionary algorithm run with an
+<a href="../Evolver.html" class="extype" name="com.softwaremill.helisa.Evolver">com.softwaremill.helisa.Evolver</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Collection of necessary types and values needed to construct an evolutionary algorithm run with an
+<a href="../Evolver.html" class="extype" name="com.softwaremill.helisa.Evolver">com.softwaremill.helisa.Evolver</a>.</p><p>Import this package first with:</p><p><code>import com.softwaremill.helisa._</code></p><p>then create a new <code>Evolver</code> with <a href="../Evolver$.html#apply[A,G&lt;:com.softwaremill.helisa.Gene[_,G],FitnessResult](fitnessFunction:A=&gt;FitnessResult,genotype:()=&gt;com.softwaremill.helisa.Genotype[G])(implicitdecoder:com.softwaremill.helisa.api.convert.Decoder[A,G],implicitevComp:com.softwaremill.helisa.api.FitnessResultComparable[FitnessResult]):com.softwaremill.helisa.EvolverBuilder[A,G,evComp.FitnessResultC]" class="extmbr" name="com.softwaremill.helisa.Evolver#apply">com.softwaremill.helisa.Evolver.apply</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.softwaremill">softwaremill</a></dd><dt>See also</dt><dd><span class="cmt"><p>Evolver</p></span></dd></dl></div>
     </li><li name="com.softwaremill.helisa.api" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="api"></a><a id="api:api"></a>
       <span class="permalink">
@@ -151,16 +153,16 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.softwaremill.helisa.api">api</a></dd></dl></div>
     </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="object" href="GeneticOperator$$crossover$.html" title=""></a>
-                        <a href="GeneticOperator$$crossover$.html" title="">crossover</a>
+                        <a class="object" href="GeneticOperator$$crossover$.html" title="Crossover operators, intended to simulate recombination between genotypes in a population."></a>
+                        <a href="GeneticOperator$$crossover$.html" title="Crossover operators, intended to simulate recombination between genotypes in a population.">crossover</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="object" href="" title=""></a>
-                        <a href="" title="">gp</a>
+                        <a class="object" href="" title="Genetic Programming operators"></a>
+                        <a href="" title="Genetic Programming operators">gp</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="object" href="GeneticOperator$$mutator$.html" title=""></a>
-                        <a href="GeneticOperator$$mutator$.html" title="">mutator</a>
+                        <a class="object" href="GeneticOperator$$mutator$.html" title="Operators introducing small changes to the genotypes of the population to e.g."></a>
+                        <a href="GeneticOperator$$mutator$.html" title="Operators introducing small changes to the genotypes of the population to e.g.">mutator</a>
                       </li>
               </ul>
             </div>
@@ -189,7 +191,8 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Genetic Programming operators
+</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -497,9 +500,9 @@
               
         </dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.GeneticOperator.gp#singleNodeCrossover" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="singleNodeCrossover[G&lt;:com.softwaremill.helisa.TreeGene[_,G],FRC&lt;:Comparable[FRC]](pRecombine:Double):io.jenetics.ext.SingleNodeCrossover[G,FRC]"></a><a id="singleNodeCrossover[G&lt;:TreeGene[_,G],FRC&lt;:Comparable[FRC]](Double):SingleNodeCrossover[G,FRC]"></a>
+      <a id="singleNodeCrossover[G&lt;:com.softwaremill.helisa.TreeGene[_,G],Fitness&lt;:Comparable[Fitness]](pRecombine:Double):io.jenetics.ext.SingleNodeCrossover[G,Fitness]"></a><a id="singleNodeCrossover[G&lt;:TreeGene[_,G],Fitness&lt;:Comparable[Fitness]](Double):SingleNodeCrossover[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$gp$.html#singleNodeCrossover[G&lt;:com.softwaremill.helisa.TreeGene[_,G],FRC&lt;:Comparable[FRC]](pRecombine:Double):io.jenetics.ext.SingleNodeCrossover[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$gp$.html#singleNodeCrossover[G&lt;:com.softwaremill.helisa.TreeGene[_,G],Fitness&lt;:Comparable[Fitness]](pRecombine:Double):io.jenetics.ext.SingleNodeCrossover[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -508,7 +511,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">singleNodeCrossover</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#TreeGene[A,G&lt;:com.softwaremill.helisa.package.TreeGene[A,G]]=io.jenetics.ext.TreeGene[A,G]" class="extmbr" name="com.softwaremill.helisa.TreeGene">TreeGene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.singleNodeCrossover.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.singleNodeCrossover.FRC">FRC</span>]</span>]</span><span class="params">(<span name="pRecombine">pRecombine: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">defaultOperatorProbability</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.ext.SingleNodeCrossover">SingleNodeCrossover</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.singleNodeCrossover.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.singleNodeCrossover.FRC">FRC</span>]</span>
+        <span class="name">singleNodeCrossover</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#TreeGene[A,G&lt;:com.softwaremill.helisa.package.TreeGene[A,G]]=io.jenetics.ext.TreeGene[A,G]" class="extmbr" name="com.softwaremill.helisa.TreeGene">TreeGene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.singleNodeCrossover.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.singleNodeCrossover.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="pRecombine">pRecombine: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">defaultOperatorProbability</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.ext.SingleNodeCrossover">SingleNodeCrossover</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.singleNodeCrossover.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.singleNodeCrossover.Fitness">Fitness</span>]</span>
       </span>
       
       
@@ -545,9 +548,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.GeneticOperator.gp#treeMutator" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="treeMutator[A,G&lt;:com.softwaremill.helisa.TreeGene[A,G],FRC&lt;:Comparable[FRC]](fMut:io.jenetics.ext.util.TreeNode[A]=&gt;Unit):io.jenetics.ext.TreeMutator[A,G,FRC]"></a><a id="treeMutator[A,G&lt;:TreeGene[A,G],FRC&lt;:Comparable[FRC]]((TreeNode[A])⇒Unit):TreeMutator[A,G,FRC]"></a>
+      <a id="treeMutator[A,G&lt;:com.softwaremill.helisa.TreeGene[A,G],Fitness&lt;:Comparable[Fitness]](fMut:io.jenetics.ext.util.TreeNode[A]=&gt;Unit):io.jenetics.ext.TreeMutator[A,G,Fitness]"></a><a id="treeMutator[A,G&lt;:TreeGene[A,G],Fitness&lt;:Comparable[Fitness]]((TreeNode[A])⇒Unit):TreeMutator[A,G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$gp$.html#treeMutator[A,G&lt;:com.softwaremill.helisa.TreeGene[A,G],FRC&lt;:Comparable[FRC]](fMut:io.jenetics.ext.util.TreeNode[A]=&gt;Unit):io.jenetics.ext.TreeMutator[A,G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$gp$.html#treeMutator[A,G&lt;:com.softwaremill.helisa.TreeGene[A,G],Fitness&lt;:Comparable[Fitness]](fMut:io.jenetics.ext.util.TreeNode[A]=&gt;Unit):io.jenetics.ext.TreeMutator[A,G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -556,7 +559,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">treeMutator</span><span class="tparams">[<span name="A">A</span>, <span name="G">G &lt;: <a href="../index.html#TreeGene[A,G&lt;:com.softwaremill.helisa.package.TreeGene[A,G]]=io.jenetics.ext.TreeGene[A,G]" class="extmbr" name="com.softwaremill.helisa.TreeGene">TreeGene</a>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.A">A</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.FRC">FRC</span>]</span>]</span><span class="params">(<span name="fMut">fMut: (<span class="extype" name="io.jenetics.ext.util.TreeNode">TreeNode</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.A">A</span>]) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.ext.TreeMutator">TreeMutator</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.A">A</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.FRC">FRC</span>]</span>
+        <span class="name">treeMutator</span><span class="tparams">[<span name="A">A</span>, <span name="G">G &lt;: <a href="../index.html#TreeGene[A,G&lt;:com.softwaremill.helisa.package.TreeGene[A,G]]=io.jenetics.ext.TreeGene[A,G]" class="extmbr" name="com.softwaremill.helisa.TreeGene">TreeGene</a>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.A">A</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="fMut">fMut: (<span class="extype" name="io.jenetics.ext.util.TreeNode">TreeNode</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.A">A</span>]) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.ext.TreeMutator">TreeMutator</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.A">A</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.gp.treeMutator.Fitness">Fitness</span>]</span>
       </span>
       
       

@@ -113,10 +113,12 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../index.html"><span class="name">helisa</span></a>
+        <a title="Collection of necessary types and values needed to construct an evolutionary algorithm run with an com.softwaremill.helisa.Evolver." href="../index.html"><span class="name">helisa</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.softwaremill">softwaremill</a></dd></dl></div>
+      <p class="shortcomment cmt">Collection of necessary types and values needed to construct an evolutionary algorithm run with an
+<a href="../Evolver.html" class="extype" name="com.softwaremill.helisa.Evolver">com.softwaremill.helisa.Evolver</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Collection of necessary types and values needed to construct an evolutionary algorithm run with an
+<a href="../Evolver.html" class="extype" name="com.softwaremill.helisa.Evolver">com.softwaremill.helisa.Evolver</a>.</p><p>Import this package first with:</p><p><code>import com.softwaremill.helisa._</code></p><p>then create a new <code>Evolver</code> with <a href="../Evolver$.html#apply[A,G&lt;:com.softwaremill.helisa.Gene[_,G],FitnessResult](fitnessFunction:A=&gt;FitnessResult,genotype:()=&gt;com.softwaremill.helisa.Genotype[G])(implicitdecoder:com.softwaremill.helisa.api.convert.Decoder[A,G],implicitevComp:com.softwaremill.helisa.api.FitnessResultComparable[FitnessResult]):com.softwaremill.helisa.EvolverBuilder[A,G,evComp.FitnessResultC]" class="extmbr" name="com.softwaremill.helisa.Evolver#apply">com.softwaremill.helisa.Evolver.apply</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.softwaremill">softwaremill</a></dd><dt>See also</dt><dd><span class="cmt"><p>Evolver</p></span></dd></dl></div>
     </li><li name="com.softwaremill.helisa.api" visbl="pub" class="indented4 current" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="api"></a><a id="api:api"></a>
       <span class="permalink">
@@ -155,12 +157,16 @@
                         <a href="Chromosome$.html" title="">Chromosome</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="GeneticOperator$.html" title=""></a>
-                        <a href="GeneticOperator$.html" title="">GeneticOperator</a>
+                        <a class="class" href="EvolutionResult.html" title="Result of the current evolutionary iteration, provided by an iterator/stream created from an Evolver"></a>
+                        <a href="EvolutionResult.html" title="Result of the current evolutionary iteration, provided by an iterator/stream created from an Evolver">EvolutionResult</a>
+                      </li><li class="current-entities indented4">
+                        <a class="object" href="FitnessResultComparable$.html" title=""></a>
+                        <a class="trait" href="FitnessResultComparable.html" title=""></a>
+                        <a href="FitnessResultComparable.html" title="">FitnessResultComparable</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="InternalImplicits$.html" title=""></a>
-                        <a href="InternalImplicits$.html" title="">InternalImplicits</a>
+                        <a class="object" href="GeneticOperator$.html" title=""></a>
+                        <a href="GeneticOperator$.html" title="">GeneticOperator</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="Selector$.html" title=""></a>
@@ -226,7 +232,50 @@
         <div id="allMembers">
         
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="com.softwaremill.helisa.api.EvolutionResult" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EvolutionResult[A,G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]]extendsAnyRef"></a><a id="EvolutionResult[A,G&lt;:Gene[_,G],Fitness&lt;:Comparable[Fitness]]:EvolutionResult[A,G,Fitness]"></a>
+      <span class="permalink">
+      <a href="../../../../com/softwaremill/helisa/api/index.html#EvolutionResult[A,G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]]extendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="Result of the current evolutionary iteration, provided by an iterator/stream created from an Evolver" href="EvolutionResult.html"><span class="name">EvolutionResult</span></a><span class="tparams">[<span name="A">A</span>, <span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.EvolutionResult.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.EvolutionResult.Fitness">Fitness</span>]</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Result of the current evolutionary iteration, provided by an iterator/stream created from an
+<a href="../Evolver.html" class="extype" name="com.softwaremill.helisa.Evolver">Evolver</a>
+</p>
+    </li><li name="com.softwaremill.helisa.api.FitnessResultComparable" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="FitnessResultComparable[Fitness]extendsAnyRef"></a><a id="FitnessResultComparable[Fitness]:FitnessResultComparable[Fitness]"></a>
+      <span class="permalink">
+      <a href="../../../../com/softwaremill/helisa/api/index.html#FitnessResultComparable[Fitness]extendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="FitnessResultComparable.html"><span class="name">FitnessResultComparable</span></a><span class="tparams">[<span name="Fitness">Fitness</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@implicitNotFound</span><span class="args">(<span>
+      
+      <span class="defval" name="&quot;&quot;&quot;Comparable to {FitnessResult} not found. The result of your fitness function should either:<br/>1. Be a primitive (Int/Long/Double/Float).<br/>2. Implement java.lang.Comparable.&quot;&quot;&quot;">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
 
         
 
@@ -249,6 +298,22 @@
       </span>
       
       
+    </li><li name="com.softwaremill.helisa.api.FitnessResultComparable" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FitnessResultComparable"></a><a id="FitnessResultComparable:FitnessResultComparable"></a>
+      <span class="permalink">
+      <a href="../../../../com/softwaremill/helisa/api/index.html#FitnessResultComparable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="FitnessResultComparable$.html"><span class="name">FitnessResultComparable</span></a>
+      </span>
+      
+      
     </li><li name="com.softwaremill.helisa.api.GeneticOperator" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="GeneticOperator"></a><a id="GeneticOperator:GeneticOperator"></a>
       <span class="permalink">
@@ -262,22 +327,6 @@
       </span>
       <span class="symbol">
         <a title="" href="GeneticOperator$.html"><span class="name">GeneticOperator</span></a>
-      </span>
-      
-      
-    </li><li name="com.softwaremill.helisa.api.InternalImplicits" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="InternalImplicits"></a><a id="InternalImplicits:InternalImplicits"></a>
-      <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/index.html#InternalImplicits" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="InternalImplicits$.html"><span class="name">InternalImplicits</span></a>
       </span>
       
       

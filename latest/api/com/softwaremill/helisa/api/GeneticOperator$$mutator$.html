@@ -113,10 +113,12 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../index.html"><span class="name">helisa</span></a>
+        <a title="Collection of necessary types and values needed to construct an evolutionary algorithm run with an com.softwaremill.helisa.Evolver." href="../index.html"><span class="name">helisa</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.softwaremill">softwaremill</a></dd></dl></div>
+      <p class="shortcomment cmt">Collection of necessary types and values needed to construct an evolutionary algorithm run with an
+<a href="../Evolver.html" class="extype" name="com.softwaremill.helisa.Evolver">com.softwaremill.helisa.Evolver</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Collection of necessary types and values needed to construct an evolutionary algorithm run with an
+<a href="../Evolver.html" class="extype" name="com.softwaremill.helisa.Evolver">com.softwaremill.helisa.Evolver</a>.</p><p>Import this package first with:</p><p><code>import com.softwaremill.helisa._</code></p><p>then create a new <code>Evolver</code> with <a href="../Evolver$.html#apply[A,G&lt;:com.softwaremill.helisa.Gene[_,G],FitnessResult](fitnessFunction:A=&gt;FitnessResult,genotype:()=&gt;com.softwaremill.helisa.Genotype[G])(implicitdecoder:com.softwaremill.helisa.api.convert.Decoder[A,G],implicitevComp:com.softwaremill.helisa.api.FitnessResultComparable[FitnessResult]):com.softwaremill.helisa.EvolverBuilder[A,G,evComp.FitnessResultC]" class="extmbr" name="com.softwaremill.helisa.Evolver#apply">com.softwaremill.helisa.Evolver.apply</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.softwaremill">softwaremill</a></dd><dt>See also</dt><dd><span class="cmt"><p>Evolver</p></span></dd></dl></div>
     </li><li name="com.softwaremill.helisa.api" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="api"></a><a id="api:api"></a>
       <span class="permalink">
@@ -151,16 +153,16 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.softwaremill.helisa.api">api</a></dd></dl></div>
     </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="object" href="GeneticOperator$$crossover$.html" title=""></a>
-                        <a href="GeneticOperator$$crossover$.html" title="">crossover</a>
+                        <a class="object" href="GeneticOperator$$crossover$.html" title="Crossover operators, intended to simulate recombination between genotypes in a population."></a>
+                        <a href="GeneticOperator$$crossover$.html" title="Crossover operators, intended to simulate recombination between genotypes in a population.">crossover</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="object" href="GeneticOperator$$gp$.html" title=""></a>
-                        <a href="GeneticOperator$$gp$.html" title="">gp</a>
+                        <a class="object" href="GeneticOperator$$gp$.html" title="Genetic Programming operators"></a>
+                        <a href="GeneticOperator$$gp$.html" title="Genetic Programming operators">gp</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="object" href="" title=""></a>
-                        <a href="" title="">mutator</a>
+                        <a class="object" href="" title="Operators introducing small changes to the genotypes of the population to e.g."></a>
+                        <a href="" title="Operators introducing small changes to the genotypes of the population to e.g.">mutator</a>
                       </li>
               </ul>
             </div>
@@ -189,7 +191,8 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Operators introducing small changes to the genotypes of the population to e.g. prevent elitism
+</p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -389,9 +392,9 @@
               
         </dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.GeneticOperator.mutator#gaussian" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="gaussian[G&lt;:io.jenetics.NumericGene[_,G],FRC&lt;:Comparable[FRC]](pMutate:Double):io.jenetics.GaussianMutator[G,FRC]"></a><a id="gaussian[G&lt;:io.jenetics.NumericGene[_,G],FRC&lt;:Comparable[FRC]](Double):GaussianMutator[G,FRC]"></a>
+      <a id="gaussian[G&lt;:io.jenetics.NumericGene[_,G],Fitness&lt;:Comparable[Fitness]](pMutate:Double):io.jenetics.GaussianMutator[G,Fitness]"></a><a id="gaussian[G&lt;:io.jenetics.NumericGene[_,G],Fitness&lt;:Comparable[Fitness]](Double):GaussianMutator[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$mutator$.html#gaussian[G&lt;:io.jenetics.NumericGene[_,G],FRC&lt;:Comparable[FRC]](pMutate:Double):io.jenetics.GaussianMutator[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$mutator$.html#gaussian[G&lt;:io.jenetics.NumericGene[_,G],Fitness&lt;:Comparable[Fitness]](pMutate:Double):io.jenetics.GaussianMutator[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -400,7 +403,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">gaussian</span><span class="tparams">[<span name="G">G &lt;: <span class="extype" name="io.jenetics.NumericGene">io.jenetics.NumericGene</span>[_, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.gaussian.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.gaussian.FRC">FRC</span>]</span>]</span><span class="params">(<span name="pMutate">pMutate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">defaultOperatorProbability</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.GaussianMutator">GaussianMutator</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.gaussian.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.gaussian.FRC">FRC</span>]</span>
+        <span class="name">gaussian</span><span class="tparams">[<span name="G">G &lt;: <span class="extype" name="io.jenetics.NumericGene">io.jenetics.NumericGene</span>[_, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.gaussian.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.gaussian.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="pMutate">pMutate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">defaultOperatorProbability</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.GaussianMutator">GaussianMutator</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.gaussian.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.gaussian.Fitness">Fitness</span>]</span>
       </span>
       
       
@@ -459,9 +462,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.GeneticOperator.mutator#mutator" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="mutator[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](pMutate:Double):io.jenetics.Mutator[G,FRC]"></a><a id="mutator[G&lt;:Gene[_,G],FRC&lt;:Comparable[FRC]](Double):Mutator[G,FRC]"></a>
+      <a id="mutator[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](pMutate:Double):io.jenetics.Mutator[G,Fitness]"></a><a id="mutator[G&lt;:Gene[_,G],Fitness&lt;:Comparable[Fitness]](Double):Mutator[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$mutator$.html#mutator[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](pMutate:Double):io.jenetics.Mutator[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$mutator$.html#mutator[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](pMutate:Double):io.jenetics.Mutator[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -470,7 +473,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">mutator</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.mutator.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.mutator.FRC">FRC</span>]</span>]</span><span class="params">(<span name="pMutate">pMutate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.01</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.Mutator">Mutator</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.mutator.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.mutator.FRC">FRC</span>]</span>
+        <span class="name">mutator</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.mutator.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.mutator.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="pMutate">pMutate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.01</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.Mutator">Mutator</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.mutator.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.mutator.Fitness">Fitness</span>]</span>
       </span>
       
       
@@ -529,9 +532,9 @@
               
         </dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.GeneticOperator.mutator#swap" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="swap[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](pMutate:Double):io.jenetics.SwapMutator[G,FRC]"></a><a id="swap[G&lt;:Gene[_,G],FRC&lt;:Comparable[FRC]](Double):SwapMutator[G,FRC]"></a>
+      <a id="swap[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](pMutate:Double):io.jenetics.SwapMutator[G,Fitness]"></a><a id="swap[G&lt;:Gene[_,G],Fitness&lt;:Comparable[Fitness]](Double):SwapMutator[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$mutator$.html#swap[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](pMutate:Double):io.jenetics.SwapMutator[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/GeneticOperator$$mutator$.html#swap[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](pMutate:Double):io.jenetics.SwapMutator[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -540,7 +543,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">swap</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.swap.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.swap.FRC">FRC</span>]</span>]</span><span class="params">(<span name="pMutate">pMutate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">defaultOperatorProbability</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.SwapMutator">SwapMutator</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.swap.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.swap.FRC">FRC</span>]</span>
+        <span class="name">swap</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.swap.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.swap.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="pMutate">pMutate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">defaultOperatorProbability</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.SwapMutator">SwapMutator</span>[<span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.swap.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.GeneticOperator.mutator.swap.Fitness">Fitness</span>]</span>
       </span>
       
       

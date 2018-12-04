@@ -113,10 +113,12 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../index.html"><span class="name">helisa</span></a>
+        <a title="Collection of necessary types and values needed to construct an evolutionary algorithm run with an com.softwaremill.helisa.Evolver." href="../index.html"><span class="name">helisa</span></a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.softwaremill">softwaremill</a></dd></dl></div>
+      <p class="shortcomment cmt">Collection of necessary types and values needed to construct an evolutionary algorithm run with an
+<a href="../Evolver.html" class="extype" name="com.softwaremill.helisa.Evolver">com.softwaremill.helisa.Evolver</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Collection of necessary types and values needed to construct an evolutionary algorithm run with an
+<a href="../Evolver.html" class="extype" name="com.softwaremill.helisa.Evolver">com.softwaremill.helisa.Evolver</a>.</p><p>Import this package first with:</p><p><code>import com.softwaremill.helisa._</code></p><p>then create a new <code>Evolver</code> with <a href="../Evolver$.html#apply[A,G&lt;:com.softwaremill.helisa.Gene[_,G],FitnessResult](fitnessFunction:A=&gt;FitnessResult,genotype:()=&gt;com.softwaremill.helisa.Genotype[G])(implicitdecoder:com.softwaremill.helisa.api.convert.Decoder[A,G],implicitevComp:com.softwaremill.helisa.api.FitnessResultComparable[FitnessResult]):com.softwaremill.helisa.EvolverBuilder[A,G,evComp.FitnessResultC]" class="extmbr" name="com.softwaremill.helisa.Evolver#apply">com.softwaremill.helisa.Evolver.apply</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.softwaremill">softwaremill</a></dd><dt>See also</dt><dd><span class="cmt"><p>Evolver</p></span></dd></dl></div>
     </li><li name="com.softwaremill.helisa.api" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="api"></a><a id="api:api"></a>
       <span class="permalink">
@@ -303,9 +305,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.Selector.standard#boltzman" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="boltzman[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:NumberwithComparable[FRC]](b:Double):io.jenetics.BoltzmannSelector[G,FRC]"></a><a id="boltzman[G&lt;:Gene[_,G],FRC&lt;:NumberwithComparable[FRC]](Double):BoltzmannSelector[G,FRC]"></a>
+      <a id="boltzman[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:NumberwithComparable[Fitness]](b:Double):io.jenetics.BoltzmannSelector[G,Fitness]"></a><a id="boltzman[G&lt;:Gene[_,G],Fitness&lt;:NumberwithComparable[Fitness]](Double):BoltzmannSelector[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#boltzman[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:NumberwithComparable[FRC]](b:Double):io.jenetics.BoltzmannSelector[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#boltzman[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:NumberwithComparable[Fitness]](b:Double):io.jenetics.BoltzmannSelector[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -314,7 +316,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">boltzman</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.boltzman.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Number">Number</span> with <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.boltzman.FRC">FRC</span>]</span>]</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.4</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.BoltzmannSelector">BoltzmannSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.boltzman.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.boltzman.FRC">FRC</span>]</span>
+        <span class="name">boltzman</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.boltzman.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Number">Number</span> with <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.boltzman.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.4</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.BoltzmannSelector">BoltzmannSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.boltzman.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.boltzman.Fitness">Fitness</span>]</span>
       </span>
       
       
@@ -343,9 +345,9 @@
               
         </dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.Selector.standard#elite" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="elite[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](eliteCount:Int):io.jenetics.EliteSelector[G,FRC]"></a><a id="elite[G&lt;:Gene[_,G],FRC&lt;:Comparable[FRC]](Int):EliteSelector[G,FRC]"></a>
+      <a id="elite[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](eliteCount:Int):io.jenetics.EliteSelector[G,Fitness]"></a><a id="elite[G&lt;:Gene[_,G],Fitness&lt;:Comparable[Fitness]](Int):EliteSelector[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#elite[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](eliteCount:Int):io.jenetics.EliteSelector[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#elite[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](eliteCount:Int):io.jenetics.EliteSelector[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -354,7 +356,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">elite</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.elite.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.elite.FRC">FRC</span>]</span>]</span><span class="params">(<span name="eliteCount">eliteCount: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.EliteSelector">EliteSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.elite.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.elite.FRC">FRC</span>]</span>
+        <span class="name">elite</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.elite.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.elite.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="eliteCount">eliteCount: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.EliteSelector">EliteSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.elite.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.elite.Fitness">Fitness</span>]</span>
       </span>
       
       
@@ -391,9 +393,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.Selector.standard#exponentialRank" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="exponentialRank[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](c:Double):io.jenetics.ExponentialRankSelector[G,FRC]"></a><a id="exponentialRank[G&lt;:Gene[_,G],FRC&lt;:Comparable[FRC]](Double):ExponentialRankSelector[G,FRC]"></a>
+      <a id="exponentialRank[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](c:Double):io.jenetics.ExponentialRankSelector[G,Fitness]"></a><a id="exponentialRank[G&lt;:Gene[_,G],Fitness&lt;:Comparable[Fitness]](Double):ExponentialRankSelector[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#exponentialRank[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](c:Double):io.jenetics.ExponentialRankSelector[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#exponentialRank[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](c:Double):io.jenetics.ExponentialRankSelector[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -402,7 +404,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">exponentialRank</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.exponentialRank.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.exponentialRank.FRC">FRC</span>]</span>]</span><span class="params">(<span name="c">c: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.975</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.ExponentialRankSelector">ExponentialRankSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.exponentialRank.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.exponentialRank.FRC">FRC</span>]</span>
+        <span class="name">exponentialRank</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.exponentialRank.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.exponentialRank.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="c">c: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.975</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.ExponentialRankSelector">ExponentialRankSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.exponentialRank.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.exponentialRank.Fitness">Fitness</span>]</span>
       </span>
       
       
@@ -483,9 +485,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.Selector.standard#linearRank" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="linearRank[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](nminus:Double):io.jenetics.LinearRankSelector[G,FRC]"></a><a id="linearRank[G&lt;:Gene[_,G],FRC&lt;:Comparable[FRC]](Double):LinearRankSelector[G,FRC]"></a>
+      <a id="linearRank[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](nminus:Double):io.jenetics.LinearRankSelector[G,Fitness]"></a><a id="linearRank[G&lt;:Gene[_,G],Fitness&lt;:Comparable[Fitness]](Double):LinearRankSelector[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#linearRank[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](nminus:Double):io.jenetics.LinearRankSelector[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#linearRank[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](nminus:Double):io.jenetics.LinearRankSelector[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -494,14 +496,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">linearRank</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.linearRank.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.linearRank.FRC">FRC</span>]</span>]</span><span class="params">(<span name="nminus">nminus: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.5</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.LinearRankSelector">LinearRankSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.linearRank.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.linearRank.FRC">FRC</span>]</span>
+        <span class="name">linearRank</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.linearRank.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.linearRank.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="nminus">nminus: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.5</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.LinearRankSelector">LinearRankSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.linearRank.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.linearRank.Fitness">Fitness</span>]</span>
       </span>
       
       
     </li><li name="com.softwaremill.helisa.api.Selector.standard#monteCarlo" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="monteCarlo[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]]():io.jenetics.MonteCarloSelector[G,FRC]"></a><a id="monteCarlo[G&lt;:Gene[_,G],FRC&lt;:Comparable[FRC]]():MonteCarloSelector[G,FRC]"></a>
+      <a id="monteCarlo[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]]():io.jenetics.MonteCarloSelector[G,Fitness]"></a><a id="monteCarlo[G&lt;:Gene[_,G],Fitness&lt;:Comparable[Fitness]]():MonteCarloSelector[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#monteCarlo[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]]():io.jenetics.MonteCarloSelector[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#monteCarlo[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]]():io.jenetics.MonteCarloSelector[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -510,7 +512,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">monteCarlo</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.monteCarlo.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.monteCarlo.FRC">FRC</span>]</span>]</span><span class="params">()</span><span class="result">: <span class="extype" name="io.jenetics.MonteCarloSelector">MonteCarloSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.monteCarlo.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.monteCarlo.FRC">FRC</span>]</span>
+        <span class="name">monteCarlo</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.monteCarlo.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.monteCarlo.Fitness">Fitness</span>]</span>]</span><span class="params">()</span><span class="result">: <span class="extype" name="io.jenetics.MonteCarloSelector">MonteCarloSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.monteCarlo.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.monteCarlo.Fitness">Fitness</span>]</span>
       </span>
       
       
@@ -569,9 +571,9 @@
               
         </dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.Selector.standard#rouletteWheel" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="rouletteWheel[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:NumberwithComparable[FRC]]():io.jenetics.RouletteWheelSelector[G,FRC]"></a><a id="rouletteWheel[G&lt;:Gene[_,G],FRC&lt;:NumberwithComparable[FRC]]():RouletteWheelSelector[G,FRC]"></a>
+      <a id="rouletteWheel[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:NumberwithComparable[Fitness]]():io.jenetics.RouletteWheelSelector[G,Fitness]"></a><a id="rouletteWheel[G&lt;:Gene[_,G],Fitness&lt;:NumberwithComparable[Fitness]]():RouletteWheelSelector[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#rouletteWheel[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:NumberwithComparable[FRC]]():io.jenetics.RouletteWheelSelector[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#rouletteWheel[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:NumberwithComparable[Fitness]]():io.jenetics.RouletteWheelSelector[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -580,14 +582,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">rouletteWheel</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.rouletteWheel.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Number">Number</span> with <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.rouletteWheel.FRC">FRC</span>]</span>]</span><span class="params">()</span><span class="result">: <span class="extype" name="io.jenetics.RouletteWheelSelector">RouletteWheelSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.rouletteWheel.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.rouletteWheel.FRC">FRC</span>]</span>
+        <span class="name">rouletteWheel</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.rouletteWheel.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Number">Number</span> with <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.rouletteWheel.Fitness">Fitness</span>]</span>]</span><span class="params">()</span><span class="result">: <span class="extype" name="io.jenetics.RouletteWheelSelector">RouletteWheelSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.rouletteWheel.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.rouletteWheel.Fitness">Fitness</span>]</span>
       </span>
       
       
     </li><li name="com.softwaremill.helisa.api.Selector.standard#stochasticUniversal" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="stochasticUniversal[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:NumberwithComparable[FRC]]():io.jenetics.StochasticUniversalSelector[G,FRC]"></a><a id="stochasticUniversal[G&lt;:Gene[_,G],FRC&lt;:NumberwithComparable[FRC]]():StochasticUniversalSelector[G,FRC]"></a>
+      <a id="stochasticUniversal[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:NumberwithComparable[Fitness]]():io.jenetics.StochasticUniversalSelector[G,Fitness]"></a><a id="stochasticUniversal[G&lt;:Gene[_,G],Fitness&lt;:NumberwithComparable[Fitness]]():StochasticUniversalSelector[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#stochasticUniversal[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:NumberwithComparable[FRC]]():io.jenetics.StochasticUniversalSelector[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#stochasticUniversal[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:NumberwithComparable[Fitness]]():io.jenetics.StochasticUniversalSelector[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -596,7 +598,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">stochasticUniversal</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.stochasticUniversal.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Number">Number</span> with <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.stochasticUniversal.FRC">FRC</span>]</span>]</span><span class="params">()</span><span class="result">: <span class="extype" name="io.jenetics.StochasticUniversalSelector">StochasticUniversalSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.stochasticUniversal.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.stochasticUniversal.FRC">FRC</span>]</span>
+        <span class="name">stochasticUniversal</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.stochasticUniversal.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Number">Number</span> with <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.stochasticUniversal.Fitness">Fitness</span>]</span>]</span><span class="params">()</span><span class="result">: <span class="extype" name="io.jenetics.StochasticUniversalSelector">StochasticUniversalSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.stochasticUniversal.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.stochasticUniversal.Fitness">Fitness</span>]</span>
       </span>
       
       
@@ -633,9 +635,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.softwaremill.helisa.api.Selector.standard#tournament" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="tournament[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](sampleSize:Int):io.jenetics.TournamentSelector[G,FRC]"></a><a id="tournament[G&lt;:Gene[_,G],FRC&lt;:Comparable[FRC]](Int):TournamentSelector[G,FRC]"></a>
+      <a id="tournament[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](sampleSize:Int):io.jenetics.TournamentSelector[G,Fitness]"></a><a id="tournament[G&lt;:Gene[_,G],Fitness&lt;:Comparable[Fitness]](Int):TournamentSelector[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#tournament[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](sampleSize:Int):io.jenetics.TournamentSelector[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#tournament[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](sampleSize:Int):io.jenetics.TournamentSelector[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -644,14 +646,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">tournament</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.tournament.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.tournament.FRC">FRC</span>]</span>]</span><span class="params">(<span name="sampleSize">sampleSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">2</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.TournamentSelector">TournamentSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.tournament.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.tournament.FRC">FRC</span>]</span>
+        <span class="name">tournament</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.tournament.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.tournament.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="sampleSize">sampleSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">2</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.TournamentSelector">TournamentSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.tournament.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.tournament.Fitness">Fitness</span>]</span>
       </span>
       
       
     </li><li name="com.softwaremill.helisa.api.Selector.standard#truncation" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="truncation[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](n:Int):io.jenetics.TruncationSelector[G,FRC]"></a><a id="truncation[G&lt;:Gene[_,G],FRC&lt;:Comparable[FRC]](Int):TruncationSelector[G,FRC]"></a>
+      <a id="truncation[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](n:Int):io.jenetics.TruncationSelector[G,Fitness]"></a><a id="truncation[G&lt;:Gene[_,G],Fitness&lt;:Comparable[Fitness]](Int):TruncationSelector[G,Fitness]"></a>
       <span class="permalink">
-      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#truncation[G&lt;:com.softwaremill.helisa.Gene[_,G],FRC&lt;:Comparable[FRC]](n:Int):io.jenetics.TruncationSelector[G,FRC]" title="Permalink">
+      <a href="../../../../com/softwaremill/helisa/api/Selector$$standard$.html#truncation[G&lt;:com.softwaremill.helisa.Gene[_,G],Fitness&lt;:Comparable[Fitness]](n:Int):io.jenetics.TruncationSelector[G,Fitness]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -660,7 +662,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">truncation</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.truncation.G">G</span>]</span>, <span name="FRC">FRC &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.truncation.FRC">FRC</span>]</span>]</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">Int.MaxValue</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.TruncationSelector">TruncationSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.truncation.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.truncation.FRC">FRC</span>]</span>
+        <span class="name">truncation</span><span class="tparams">[<span name="G">G &lt;: <a href="../index.html#Gene[A,G&lt;:com.softwaremill.helisa.package.Gene[A,G]]=io.jenetics.Gene[A,G]" class="extmbr" name="com.softwaremill.helisa.Gene">Gene</a>[_, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.truncation.G">G</span>]</span>, <span name="Fitness">Fitness &lt;: <span class="extype" name="java.lang.Comparable">Comparable</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.truncation.Fitness">Fitness</span>]</span>]</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">Int.MaxValue</span></span>)</span><span class="result">: <span class="extype" name="io.jenetics.TruncationSelector">TruncationSelector</span>[<span class="extype" name="com.softwaremill.helisa.api.Selector.standard.truncation.G">G</span>, <span class="extype" name="com.softwaremill.helisa.api.Selector.standard.truncation.Fitness">Fitness</span>]</span>
       </span>
       
       
