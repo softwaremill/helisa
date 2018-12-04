@@ -12,7 +12,7 @@ val jeneticsDeps = Seq(
   "jenetics",
   "jenetics.prog",
   "jenetics.ext"
-).map("io.jenetics" % _ % "4.1.0")
+).map("io.jenetics" % _ % "4.3.0")
 
 val coreDeps = Seq("com.chuusai" %% "shapeless" % "2.3.2",
   "org.scala-lang.modules" %% "scala-java8-compat" % "0.9.0") ++
