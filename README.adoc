@@ -1,6 +1,8 @@
 = Helisa
 :apiUrl: https://softwaremill.github.io/helisa/latest/api/com/softwaremill/helisa/
 
+image:https://maven-badges.herokuapp.com/maven-central/com.softwaremill/helisa_2.12/badge.svg["Latest 2.12 version", link="https://maven-badges.herokuapp.com/maven-central/com.softwaremill/helisa_2.12"]
+
 == What is it?
 
 Helisa (HEL-EE-SAH) is a Scala frontend for solving problems with genetic algorithms and genetic programming.
@@ -11,7 +13,14 @@ It's pretty much a Scala wrapper around the excellent http://jenetics.io[`jeneti
 
 === Obtaining
 
-`helisa` will be released on Maven Central soon - track https://github.com/softwaremill/helisa/issues/1[this issue] to know when that happens. In the meantime, feel free to clone this repo and use it as a local dependency. Sorry about the delay!
+`helisa` is available on Maven central through:
+
+[source,scala]
+----
+"com.softwaremill" %% "helisa" % "0.8.0"
+----
+
+Currently only Scala 2.12 is supported.
 
 === Basic usage
 
