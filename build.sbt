@@ -1,7 +1,11 @@
+import sbt.url
+
 name := "helisa"
+organization := "com.softwaremill"
 version := "0.1"
 
 scalaVersion := "2.12.6"
+lazy val repoUrl = "https://github.com/softwaremill/helisa"
 
 
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.8")
@@ -35,5 +39,27 @@ enablePlugins(SiteScaladocPlugin, GhpagesPlugin)
 siteSubdirName in SiteScaladoc := "latest/api"
 scalacOptions in (Compile,doc) ++= Seq("-groups") ++ Opts.doc.title("Helisa")
 
-scmInfo := Some(ScmInfo(url("https://github.com/softwaremill/helisa"), "https://github.com/softwaremill/helisa.git"))
+scmInfo := Some(ScmInfo(url(repoUrl), s"$repoUrl.git"))
 git.remoteRepo := scmInfo.value.get.connection
+
+//Sonatype OSS stuff (based on https://github.com/xerial/sbt-sonatype )
+publishTo := Some(
+  if (isSnapshot.value)
+    Opts.resolver.sonatypeSnapshots
+  else
+    Opts.resolver.sonatypeStaging
+)
+
+publishMavenStyle := true
+
+licenses := Seq("APL2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
+homepage := Some(url(repoUrl))
+scmInfo := Some(
+  ScmInfo(
+    url(repoUrl),
+    "scm:git@github.com:softwaremill/helisa.git"
+  )
+)
+developers := List(
+  Developer(id = "mikolak-net", name = "Mikołaj Koziarkiewicz", email = "", url = url("https://softwaremill.com"))
+)
